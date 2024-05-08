@@ -6,19 +6,25 @@ class NoteModel {
   String body;
   Timestamp creationDate;
 
-  NoteModel({this.id, this.title, this.body, this.creationDate});
+  NoteModel(
+      {required this.id,
+      required this.title,
+      required this.body,
+      required this.creationDate});
 
-  NoteModel.fromDocumentSnapshot(DocumentSnapshot documentSnapshot) {
-    id = documentSnapshot["id"];
-    title = documentSnapshot['title'];
-    body = documentSnapshot["body"];
-    creationDate = documentSnapshot["creationDate"];
+  factory NoteModel.fromDocumentSnapshot(DocumentSnapshot documentSnapshot) {
+    return NoteModel(
+        id: documentSnapshot["id"],
+        title: documentSnapshot['title'],
+        body: documentSnapshot["body"],
+        creationDate: documentSnapshot["creationDate"]);
   }
 
-  NoteModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    title = json['title'];
-    body = json["body"];
-    creationDate = json["creationDate"];
+  factory NoteModel.fromJson(Map<String, dynamic> json) {
+    return NoteModel(
+        id: json['id'],
+        title: json['title'],
+        body: json["body"],
+        creationDate: json["creationDate"]);
   }
 }
