@@ -6,7 +6,11 @@ class ListTileSetting extends StatelessWidget {
   final IconData iconData;
   final Widget subtitle;
 
-  ListTileSetting({this.title, this.iconData, this.onTap, this.subtitle});
+  ListTileSetting(
+      {required this.title,
+      required this.iconData,
+      required this.onTap,
+      required this.subtitle});
 
   @override
   Widget build(BuildContext context) {

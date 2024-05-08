@@ -45,7 +45,7 @@ class Login extends StatelessWidget {
                             validator: (value) {
                               return RegExp(
                                           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                      .hasMatch(value)
+                                      .hasMatch(value!)
                                   ? null
                                   : "Please Enter Correct Email";
                             },

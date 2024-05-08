@@ -4,7 +4,8 @@ class CustomIconBtn extends StatelessWidget {
   final Color color;
   final Function onPressed;
   final Widget icon;
-  CustomIconBtn({this.color, this.onPressed, this.icon});
+  CustomIconBtn(
+      {required this.color, required this.onPressed, required this.icon});
 
   @override
   Widget build(BuildContext context) {

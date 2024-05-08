@@ -45,7 +45,7 @@ class SignUp extends StatelessWidget {
                               hintText: "NAME",
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Theme.of(context).colorScheme.background,
+                                  color: Theme.of(context).colorScheme.surface,
                                 ),
                               ),
                               focusedBorder: UnderlineInputBorder(
@@ -72,7 +72,7 @@ class SignUp extends StatelessWidget {
                             validator: (value) {
                               return RegExp(
                                           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                      .hasMatch(value)
+                                      .hasMatch(value!)
                                   ? null
                                   : "Please Enter Correct Email";
                             },
@@ -80,7 +80,7 @@ class SignUp extends StatelessWidget {
                               hintText: "EMAIL",
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Theme.of(context).colorScheme.background,
+                                  color: Theme.of(context).colorScheme.surface,
                                 ),
                               ),
                               focusedBorder: UnderlineInputBorder(
@@ -108,7 +108,7 @@ class SignUp extends StatelessWidget {
                               hintText: "PASSWORD",
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Theme.of(context).colorScheme.background,
+                                  color: Theme.of(context).colorScheme.surface,
                                 ),
                               ),
                               focusedBorder: UnderlineInputBorder(
@@ -130,17 +130,17 @@ class SignUp extends StatelessWidget {
                   ),
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.tealAccent.shade700,
                       ),
-                      padding: MaterialStateProperty.all(
+                      padding: WidgetStateProperty.all(
                         EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                       ),
-                      shape: MaterialStateProperty.all(
+                      shape: WidgetStateProperty.all(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
                       ),
-                      minimumSize: MaterialStateProperty.all(
+                      minimumSize: WidgetStateProperty.all(
                         Size(
                           250,
                           50,
@@ -156,7 +156,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      if (_formKey.currentState.validate()) {
+                      if (_formKey.currentState!.validate()) {
                         authController.createUser();
                       }
                     },

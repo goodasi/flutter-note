@@ -9,7 +9,7 @@ import 'package:intl/intl.dart';
 class ShowNote extends StatelessWidget {
   final NoteModel noteData;
   final int index;
-  ShowNote({this.noteData, this.index});
+  ShowNote({required this.noteData, required this.index});
   final AuthController authController = Get.find<AuthController>();
   final TextEditingController titleController = TextEditingController();
   final TextEditingController bodyController = TextEditingController();
@@ -34,7 +34,7 @@ class ShowNote extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CustomIconBtn(
-                      color: Theme.of(context).colorScheme.background,
+                      color: Theme.of(context).colorScheme.surface,
                       onPressed: () {
                         Get.back();
                       },
@@ -43,7 +43,7 @@ class ShowNote extends StatelessWidget {
                       ),
                     ),
                     CustomIconBtn(
-                      color: Theme.of(context).colorScheme.background,
+                      color: Theme.of(context).colorScheme.surface,
                       onPressed: () {
                         showDeleteDialog(context, noteData);
                       },

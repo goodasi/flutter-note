@@ -27,7 +27,7 @@ class Setting extends StatelessWidget {
                       icon: Icon(
                         Icons.arrow_back_ios,
                       ),
-                      color: Theme.of(context).colorScheme.background,
+                      color: Theme.of(context).colorScheme.surface,
                       onPressed: () {
                         Get.back();
                       },
@@ -54,7 +54,7 @@ class Setting extends StatelessWidget {
                 },
                 title: "Account",
                 iconData: Icons.person,
-                subtitle: null,
+                subtitle: Text(''),
               ),
               ListTileSetting(
                 onTap: () {
@@ -62,7 +62,7 @@ class Setting extends StatelessWidget {
                 },
                 title: "Dark Mode",
                 iconData: Icons.nights_stay,
-                subtitle: null,
+                subtitle: Text(''),
               ),
             ],
           ),

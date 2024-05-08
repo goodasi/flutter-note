@@ -23,7 +23,7 @@ class DarkMode extends StatelessWidget {
                       icon: Icon(
                         Icons.arrow_back_ios,
                       ),
-                      color: Theme.of(context).colorScheme.background,
+                      color: Theme.of(context).colorScheme.surface,
                       onPressed: () {
                         Get.back();
                       },
@@ -59,7 +59,7 @@ class DarkMode extends StatelessWidget {
                 },
                 title: "Light Mode",
                 iconData: Icons.brightness_5,
-                subtitle: null,
+                subtitle: Text(''),
               ),
               ListTileSetting(
                 iconData: Icons.brightness_4_outlined,
@@ -67,7 +67,7 @@ class DarkMode extends StatelessWidget {
                   Get.changeThemeMode(ThemeMode.dark);
                 },
                 title: "Dark Mode",
-                subtitle: null,
+                subtitle: Text(''),
               ),
             ],
           ),
